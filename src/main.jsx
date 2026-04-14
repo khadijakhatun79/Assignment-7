@@ -18,11 +18,9 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage></Homepage>
+        
       },
-      {
-         index: true,
-        element: <FriendDetails></FriendDetails>
-      },
+      
        {
         path: "Timeline",
         element: <Timeline></Timeline> 
@@ -39,7 +37,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-  <RouterProvider router={router} />,
+  <RouterProvider router={router} />
   
   </StrictMode>,
 )
