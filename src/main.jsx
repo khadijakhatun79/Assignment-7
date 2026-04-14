@@ -8,6 +8,7 @@ import FriendDetails from './pages/FriendDetails/FriendDetails';
 import Timeline from './pages/Timeline/Timeline';
 import Stats from './pages/Stats/Stats';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import Homepage from './pages/homepage/Homepage';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h2>Home</h2>
+        element: <Homepage></Homepage>
       },
       {
          index: true,
