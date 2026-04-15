@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useApps = () => {
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // ✅ optional but professional
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchFriends = async () => {
@@ -16,7 +16,6 @@ const useApps = () => {
 
         const data = await res.json();
 
-        // 👉 Loader effect (optional for UI)
         setTimeout(() => {
           setFriends(data);
           setLoading(false);

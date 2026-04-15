@@ -4,7 +4,7 @@ import FriendCard from "../ui/FriendCard";
 
 const Friends = () => {
 
-  const { friends, loading } = useApps(); // ✅ correct naming
+  const { friends, loading } = useApps(); 
 
   return (
     <div className="container mx-auto my-[60px] px-4">
