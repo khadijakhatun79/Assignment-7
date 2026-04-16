@@ -1,16 +1,17 @@
-import React from 'react';
-import { useParams } from 'react-router';
-import useApps from '../../hooks/useApps'; 
+import React, {  useContext, useState } from "react";
+import { useParams } from "react-router";
+import useApps from "../../hooks/useApps";
+import { TimelineContext } from "../../context/TimelineContext"; 
+//import { toast } from "react-toastify";
+
 
 const FriendDetails = () => {
     const { id } = useParams();
-    console.log(id, "id");
       const { friends, loading } = useApps(); 
 
       const expectedFriend = friends.find((friend) => String(friend.id) === id);
-
-      console.log(friends, loading, "loading", "friend");
-      console.log(expectedFriend, "expectedFriend");
+ 
+      const {Timeline, setTimeline} = useContext(TimelineContext);
 
       if (loading) {
         return   <div className="flex justify-center items-center h-[200px]">
@@ -24,6 +25,11 @@ const FriendDetails = () => {
 };
 
 
+  const handleTimeline = ()=> {
+    setTimeline([...Timeline,expectedFriend] )
+
+  }
+  console.log(Timeline, 'Timeline');
       
     return (
           <div className="container mx-auto mt-20 mb-20">
@@ -91,13 +97,15 @@ const FriendDetails = () => {
           <div className="bg-white p-6 rounded-2xl shadow-md mt-6">
             <h3 className="font-semibold mb-4">Quick Check-In</h3>
 
-          <div className="flex gap-4">
-            <button className="flex-1 py-4 bg-gray-50 rounded">📞 Call</button>
-            <button className="flex-1 py-4 bg-gray-50 rounded">💬 Text</button>
-            <button className="flex-1 py-4 bg-gray-50 rounded">🎥 Video</button>
-
             
-          </div>
+
+         <button
+          className="btn bg-purple-500 text-white"
+          onClick={handleTimeline}
+        >
+          Install now
+        </button>
+          
         </div>
           </div>
        </div>
