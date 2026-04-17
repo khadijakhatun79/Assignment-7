@@ -1,22 +1,19 @@
 import { useState } from "react";
 import { TimelineContext } from "./TimelineContext";
 
+const TimelineProvider = ({ children }) => {
+  // ✅ FIX: small letter
+  const [timeline, setTimeline] = useState([]);
 
-const TimelineProvider = ({children}) => {
-  const [Timeline, setTimeline] = useState([]);
   const data = {
-   Timeline,
-   setTimeline,
+    timeline,
+    setTimeline,
   };
-
-  
 
   return (
     <TimelineContext.Provider value={data}>
-  {children}
-  
-   
-</TimelineContext.Provider>
+      {children}
+    </TimelineContext.Provider>
   );
 };
 
