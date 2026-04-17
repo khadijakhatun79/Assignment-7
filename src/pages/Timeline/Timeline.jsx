@@ -17,7 +17,7 @@ const Timeline = () => {
   });
 
   return (
-    <div className="p-5 max-w-4xl mx-auto">
+    <div className="p-5 max-w-4xl mx-auto mb-20">
       <h2 className="text-4xl font-bold mb-6">Timeline</h2>
 
       {/* Filter */}
@@ -32,7 +32,7 @@ const Timeline = () => {
 
         {isOpen && (
           <ul className="absolute w-full bg-white shadow">
-            {["All", "Call", "Text", "Video"].map((opt) => (
+            {[ "All","Call", "Text", "Video"].map((opt) => (
               <li
                 key={opt}
                 onClick={() => {
@@ -52,7 +52,7 @@ const Timeline = () => {
       <div className="space-y-4">
         {filteredData.length > 0 ? (
           filteredData.map((item) => (
-            <div key={item.id} className="p-4 bg-white shadow flex gap-4">
+            <div key={item.id} className="p-4 items-center bg-white shadow flex gap-4">
 
               <img
                 src={
@@ -62,7 +62,7 @@ const Timeline = () => {
                     ? VideoPng
                     : TextPng
                 }
-                className="w-10 h-10"
+                className="w-6 h-6"
               />
 
               <div>

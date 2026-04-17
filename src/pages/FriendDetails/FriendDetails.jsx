@@ -5,7 +5,13 @@ import { TimelineContext } from "../../context/TimelineContext";
 import { TbPhoneCall } from "react-icons/tb";
 import { MdOutlineSms } from "react-icons/md";
 import { FiVideo } from "react-icons/fi";
+import CallPng from "../../assets/call.png";
+import VideoPng from "../../assets/video.png";
+import TextPng from "../../assets/text.png";
 import { toast } from "react-toastify";
+import { HiBellSnooze } from "react-icons/hi2";
+import { FaArchive } from "react-icons/fa";
+import { ImBin } from "react-icons/im";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -17,7 +23,7 @@ const FriendDetails = () => {
     (friend) => String(friend.id) === id
   );
 
-  // ✅ Loading
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[200px]">
@@ -26,7 +32,7 @@ const FriendDetails = () => {
     );
   }
 
-  // ✅ Safety
+ 
   if (!expectedFriend) {
     return (
       <h1 className="text-center text-2xl mt-10">
@@ -35,7 +41,6 @@ const FriendDetails = () => {
     );
   }
 
-  // ✅ FIXED handler
   const handleAction = (type) => {
     const newEntry = {
       id: Date.now(),
@@ -44,7 +49,7 @@ const FriendDetails = () => {
       date: new Date().toLocaleDateString(),
     };
 
-    setTimeline((prev) => [...prev, newEntry]); // ✅ clean
+    setTimeline((prev) => [...prev, newEntry]); 
 
     toast.success(`${type} with ${expectedFriend.name}`);
   };
@@ -61,7 +66,7 @@ const FriendDetails = () => {
 
         {/* LEFT */}
         <div>
-          <div className="card p-6 bg-base-100 shadow-sm w-full max-w-[350px]">
+          <div className="card p-6 bg-base-100 shadow-sm w-full lg:max-w-[350px]">
             <figure>
               <img
                 className="h-[80px] w-[80px] rounded-full object-cover"
@@ -75,7 +80,7 @@ const FriendDetails = () => {
                 {expectedFriend.name}
               </h2>
 
-              <span
+              <div><span
                 style={{
                   backgroundColor:
                     statusColor[expectedFriend.status],
@@ -83,7 +88,7 @@ const FriendDetails = () => {
                 className="text-white px-3 py-1 rounded-full text-xs"
               >
                 {expectedFriend.status}
-              </span>
+              </span></div>
 
               <div className="flex justify-center gap-2 flex-wrap mt-2">
                 {expectedFriend.tags?.map((tag, i) => (
@@ -105,6 +110,26 @@ const FriendDetails = () => {
               </span>
             </div>
           </div>
+
+            {/* Cards */}
+      <div className="mt-4">
+        
+        <div className="bg-white rounded-2xl p-4 mb-2 border border-[#E9E9E9]">
+          <h3 className="flex items-center gap-2 text-base text-[#1F2937] font-medium"> <HiBellSnooze /> Snooze 2 weeks</h3>
+        </div>
+
+        <div className="bg-white rounded-2xl p-4 mb-2 border border-[#E9E9E9]">
+          <h3 className="flex items-center gap-2 text-base text-[#1F2937] font-medium"> <FaArchive />Archive</h3>
+        </div>
+
+        <div className="bg-white rounded-2xl p-4 border border-[#E9E9E9]">
+          <h3 className="flex items-center gap-2 text-base text-red-600 font-medium"><ImBin />Delete</h3>
+        </div>
+
+        
+
+      </div>
+          
         </div>
 
         {/* RIGHT */}
@@ -127,7 +152,7 @@ const FriendDetails = () => {
             </div>
 
             <div className="bg-white p-6 rounded-2xl shadow">
-              <h3 className="text-3xl">
+              <h3 className="text-2xl xl:text-3xl">
                 {expectedFriend.next_due_date}
               </h3>
               <span>Next Due</span>
@@ -135,9 +160,9 @@ const FriendDetails = () => {
           </div>
 
           {/* Goal */}
-          <div className="bg-white p-6 rounded-2xl shadow mt-6 flex justify-between">
+          <div className="bg-white p-8 rounded-2xl shadow mt-6 flex justify-between">
             <div>
-              <h3 className="font-semibold">
+              <h3 className="font-semibold mb-3 text-xl">
                 Relationship Goal
               </h3>
               <p>Connect every {expectedFriend.goal} days</p>
@@ -157,25 +182,25 @@ const FriendDetails = () => {
             <div className="grid grid-cols-3 gap-4">
               <button
                 onClick={() => handleAction("Call")}
-                className="h-24 flex flex-col items-center justify-center btn btn-success btn-soft"
+                className="h-24 flex flex-col items-center justify-center btn bg-[#F8FAFC] btn-soft"
               >
-                <TbPhoneCall />
+                 <img src={CallPng} className="h-[26px]" />  
                 Call
               </button>
 
               <button
                 onClick={() => handleAction("Text")}
-                className="h-24 flex flex-col items-center justify-center btn btn-success btn-soft"
+                className="h-24 flex flex-col items-center justify-center btn bg-[#F8FAFC] btn-soft"
               >
-                <MdOutlineSms />
+                 <img src={TextPng} className="h-[26px]" />  
                 Text
               </button>
 
               <button
                 onClick={() => handleAction("Video")}
-                className="h-24 flex flex-col items-center justify-center btn btn-success btn-soft"
+                className="h-24 flex flex-col items-center justify-center btn bg-[#F8FAFC] btn-soft"
               >
-                <FiVideo />
+               <img src={VideoPng} className="h-[20px]" /> 
                 Video
               </button>
             </div>

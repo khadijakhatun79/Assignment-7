@@ -6,3 +6,8 @@ body {
     font-family: "Geist", sans-serif;
     background-color: #F8FAFC;
 }
+.footer-logo{
+    @media(max-width: 767px) {
+        max-width: 200px;
+    }
+}

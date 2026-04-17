@@ -20,7 +20,7 @@
     "days_since_contact": 20,
     "timeAgo": "20d ago",
     "status": "overdue",
-    "tags": ["family"],
+    "tags": ["FAMILY"],
     "bio": "My cousin who lives in Dhaka. We used to meet every weekend during childhood.",
     "goal": 10,
     "next_due_date": "2026-04-10"
@@ -33,7 +33,7 @@
     "days_since_contact": 5,
     "timeAgo": "5d ago",
     "status": "on-track",
-    "tags": ["work"],
+    "tags": ["WORK"],
     "bio": "My office teammate. We collaborate on projects and often brainstorm ideas together.",
     "goal": 14,
     "next_due_date": "2026-04-25"
@@ -102,5 +102,58 @@
     "bio": "Met through an online community. We share similar interests in design.",
     "goal": 15,
     "next_due_date": "2026-04-05"
+  },
+
+  {
+    "id": 9,
+    "name": "Arif Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/11.jpg",
+    "email": "arif.hossain@gmail.com",
+    "days_since_contact": 7,
+    "timeAgo": "7d ago",
+    "status": "on-track",
+    "tags": ["FRIEND"],
+    "bio": "Childhood friend. We still play football together occasionally.",
+    "goal": 14,
+    "next_due_date": "2026-04-30"
+  },
+  {
+    "id": 10,
+    "name": "Raisa Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/21.jpg",
+    "email": "raisa.rahman@gmail.com",
+    "days_since_contact": 22,
+    "timeAgo": "22d ago",
+    "status": "almost due",
+    "tags": ["STUDY"],
+    "bio": "Classmate from university. We often study together during exams.",
+    "goal": 12,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 11,
+    "name": "Shihab Uddin",
+    "picture": "https://randomuser.me/api/portraits/men/45.jpg",
+    "email": "shihab.uddin@gmail.com",
+    "days_since_contact": 14,
+    "timeAgo": "14d ago",
+    "status": "on-track",
+    "tags": ["WORK"],
+    "bio": "Project colleague. We regularly discuss development tasks.",
+    "goal": 14,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 12,
+    "name": "Mst. Anika Sultana",
+    "picture": "https://randomuser.me/api/portraits/women/52.jpg",
+    "email": "anika.sultana@gmail.com",
+    "days_since_contact": 9,
+    "timeAgo": "9d ago",
+    "status": "on-track",
+    "tags": ["FAMILY", "HOBBY"],
+    "bio": "My close relative. We enjoy cooking and sharing recipes.",
+    "goal": 10,
+    "next_due_date": "2026-04-29"
   }
 ]

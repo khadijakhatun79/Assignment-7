@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
                 <aside className='text-[#FAFAFA] text-center sm:flex max-w-7xl mx-auto justify-between'>
                     <p className='leading-6'> © 2026 KeenKeeper. All rights reserved.</p>
-                    <ul className='flex gap-10'>
+                    <ul className='sm:flex gap-10'>
                         <li><a href="">Privacy Policy</a></li>
                         <li><a href="">Terms of Service</a></li>
                         <li><a href="">Cookies</a></li>

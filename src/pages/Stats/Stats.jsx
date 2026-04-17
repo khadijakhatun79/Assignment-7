@@ -16,10 +16,10 @@ const Stats = () => {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto pt-20 px-4">
+    <div className="max-w-5xl mx-auto pt-20 px-4 mb-20 overflow-hidden">
       
       {/* Title */}
-      <h1 className="text-5xl font-bold text-[#1F2937] mb-10">
+      <h1 className="text-2xl sm:text-5xl font-bold text-[#1F2937] mb-10">
         Friendship Analytics
       </h1>
 

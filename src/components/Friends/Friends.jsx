@@ -26,8 +26,8 @@ const Friends = () => {
         <div className="grid gap-5 
                         grid-cols-1 
                         sm:grid-cols-2 
-                        md:grid-cols-3 
-                        lg:grid-cols-4">
+                        md:grid-cols-2 
+                        xl:grid-cols-4">
 
           {friends.map((friend) => (
             <FriendCard friend={friend} key={friend.id} />
